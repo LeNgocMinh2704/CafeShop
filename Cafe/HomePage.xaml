@@ -1,0 +1,121 @@
+﻿<Window x:Class="Cafe.HomePage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Cafe"
+        mc:Ignorable="d"
+        Title="HomePage" Height="700" Width="1100"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        AllowsTransparency="True" Loaded="Window_Loaded" 
+        >
+
+    <Border>
+        
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.5*"/>
+
+                <ColumnDefinition Width="1.5*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <!--Menu-->
+            <Border Grid.RowSpan="3">
+                <Border.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Color="#217CA3" Offset="0"/>
+                        <GradientStop Color="#3AADA1" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+
+
+            </Border>
+            <!--MenuDropDown-->
+            <Border Grid.Column="0" Grid.Row="2">
+                <StackPanel Margin="10">
+                    <!--Menu1-->
+
+                    <Button Style="{StaticResource menubutton}" x:Name="ButtonSelling" Click="ButtonSelling_Click" >
+                        <StackPanel Orientation="Horizontal" Width="200">
+                            <Image  Source="imagine/shopping.png" Style="{StaticResource menuimg}" />
+                            <TextBlock Margin="5,0" FontFamily="Roboto" FontWeight="Bold" RenderTransformOrigin="0.505,0.876" Height="16">SELLING</TextBlock>
+                        </StackPanel>
+                    </Button>
+                    <!--Menu1-->
+                    <Button  Style="{StaticResource menubutton}" x:Name="ButtonAgent" Click="ButtonAgent_Click">
+                        <StackPanel Orientation="Horizontal" Width="200">
+                            <Image  Source="imagine/agent.png" Style="{StaticResource menuimg}" />
+                            <TextBlock Margin="5,0" FontFamily="Roboto" FontWeight="Bold" RenderTransformOrigin="0.505,0.876" Height="17">AGENT-PARTNER</TextBlock>
+                        </StackPanel>
+                    </Button>
+                    <!--Menu1-->
+                    <Button  Style="{StaticResource menubutton}" x:Name="ButtonProduct" Click="ButtonProduct_Click" >
+                        <StackPanel Orientation="Horizontal" Width="200">
+                            <Image Source="imagine/product.png" Style="{StaticResource menuimg}"/>
+                            <TextBlock Margin="5,0" FontFamily="Roboto" FontWeight="Bold" RenderTransformOrigin="0.505,0.876" Height="16" >PRODUCT-SERVICE</TextBlock>
+                        </StackPanel>
+                    </Button>
+                    <Button  Style="{StaticResource menubutton}" x:Name="ButtonStorage" Click="ButtonStorage_Click">
+                        <StackPanel Orientation="Horizontal" Width="200">
+                            <Image Source="imagine/inventory.png" Style="{StaticResource menuimg}"/>
+                            <TextBlock Margin="5,0" FontFamily="Roboto" FontWeight="Bold" RenderTransformOrigin="0.505,0.876" Height="16" >STORAGE MANAGEMENT</TextBlock>
+                        </StackPanel>
+                    </Button>
+                    <Button  Style="{StaticResource menubutton}" x:Name="ButtonEmployee" Click="ButtonEmployee_Click">
+                        <StackPanel Orientation="Horizontal" Width="200">
+                            <Image Source="imagine/employee.png" Style="{StaticResource menuimg}"/>
+                            <TextBlock Margin="5,0" FontFamily="Roboto" FontWeight="Bold" RenderTransformOrigin="0.505,0.876" Height="16">EMPLOYEE</TextBlock>
+                        </StackPanel>
+                    </Button>
+                    <Button  Style="{StaticResource menubutton}" x:Name="ButtonReport" Click="ButtonReport_Click">
+                        <StackPanel Orientation="Horizontal" Width="200">
+                            <Image Source="imagine/report.png" Style="{StaticResource menuimg}"/>
+                            <TextBlock Margin="5,0" FontFamily="Roboto" FontWeight="Bold" RenderTransformOrigin="0.505,0.876" Height="16">REPORT</TextBlock>
+                        </StackPanel>
+                    </Button>
+                    <Button  Style="{StaticResource menubutton}">
+                        <StackPanel Orientation="Horizontal" Width="200">
+                            <Image Source="imagine/shopping.png" Style="{StaticResource menuimg}"/>
+                            <TextBlock Margin="5,0" FontFamily="Roboto" FontWeight="Bold" RenderTransformOrigin="0.505,0.876" Height="16">MANAGEMENT</TextBlock>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+
+            </Border>
+
+
+
+
+
+
+
+            <!--Information-->
+            <Border Grid.Column="0" Grid.Row="1" BorderThickness="0,1,0,1" BorderBrush="White" Opacity="0.8" >
+                <StackPanel Orientation="Horizontal" >
+                    <Image Source="/imagine/admin.png" Height="30" Width="111"/>
+                    <TextBlock Text="ADMIN" Style="{StaticResource ResourceKey=normalText}" FontFamily="Roboto" FontWeight="Bold" Height="18" Width="53" Margin="-30 0 0 0" />
+
+                </StackPanel>
+
+            </Border>
+            <!--Logo-->
+            <Border Grid.Column="0" Grid.Row="0" Margin="0,0,0,5" >
+                <Border CornerRadius="90" Margin="-24,-15,137,-34" RenderTransformOrigin="0.984,0.777">
+                    <Border.Background>
+                        <ImageBrush Stretch="Fill" ImageSource="imagine/logo.png"/>
+                    </Border.Background>
+                    <TextBlock Text="Your Store's Name" Style="{StaticResource ResourceKey=normalText}" FontFamily="Roboto" FontWeight="Bold" Margin="87,64,-162,23" />
+                </Border>
+
+            </Border>
+            <TabPanel Grid.Column="1" Grid.RowSpan="3" x:Name="MainPanel" Margin="10"/>
+
+        </Grid>
+
+    </Border>
+</Window>
