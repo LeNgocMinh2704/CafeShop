@@ -20,12 +20,27 @@ namespace Cafe
     /// </summary>
     public partial class Login : Window
     {
+        List<Roles> RolesName;
         public Login()
         {
             InitializeComponent();
             
         }
-
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            RolesName = new List<Roles>() {
+                new Roles(){Name = "ADMIN"},
+                new Roles(){Name = "Employee"},
+                new Roles(){Name = "Accountant"},
+            };
+            CBRoles.ItemsSource = RolesName;
+            CBRoles.DisplayMemberPath = "Name";
+            
+        }
+        public class Roles
+        {
+            public string Name { get; set; }
+        }
         private void txtUername_TextChanged(object sender, TextChangedEventArgs e)
         {
             if(!string.IsNullOrEmpty(txtUsername.Text) && txtUsername.Text.Length > 0)
@@ -65,10 +80,13 @@ namespace Cafe
         {
             if (!string.IsNullOrEmpty(txtUsername.Text) && !string.IsNullOrEmpty(txtPassword.Password))
             {
+                if((CBRoles.SelectedItem as Roles).Name ==  "ADMIN")
+                {
+                    HomePage a = new HomePage();
+                    a.Show();
+                    this.Close();
+                }
                 
-                HomePage b = new HomePage();
-                b.Show();
-                this.Close();
             }
         }
 
@@ -84,5 +102,7 @@ namespace Cafe
         {
             Application.Current.Shutdown();
         }
+
+        
     }
 }

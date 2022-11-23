@@ -8,6 +8,7 @@
         Title="MainWindow" Height="500" Width="800"
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
+        Loaded="Window_Loaded"
         >
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="BoolToVisConverter" />
@@ -97,7 +98,9 @@
                         </Grid>
 
                     </Border>
-                    <ComboBox Width="335"/>
+                    <ComboBox x:Name="CBRoles" Width="345">
+                       
+                    </ComboBox>
 
                     <Button Content="Sign In" Click="SignIn_Click" Style="{StaticResource ResourceKey=Loginbutton}"/>
                 </StackPanel>
