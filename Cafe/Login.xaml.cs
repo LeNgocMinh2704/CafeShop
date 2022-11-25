@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Cafe.ViewModel;
+using MaterialDesignThemes.Wpf;
 
 namespace Cafe
 {
@@ -78,16 +81,58 @@ namespace Cafe
 
         private void SignIn_Click(object sender, RoutedEventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtUsername.Text) && !string.IsNullOrEmpty(txtPassword.Password))
+            SqlConnection connection = new SqlConnection(@"Server=MINH;Database=CAFE; Integrated Security=True");
+            try
             {
-                if((CBRoles.SelectedItem as Roles).Name ==  "ADMIN")
+                if (connection.State == System.Data.ConnectionState.Closed)
+                {
+                    connection.Open();
+                }
+                string query = "select count(1) from ACCOUNT where username=@username AND password=@password";
+                SqlCommand cmd = new SqlCommand(query, connection);
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.Parameters.AddWithValue("@username", txtUsername.Text);
+                cmd.Parameters.AddWithValue("@password", txtPassword.Password);
+                int count = Convert.ToInt32(cmd.ExecuteScalar());
+                if(count == 1 && (CBRoles.SelectedItem as Roles).Name == "ADMIN")
                 {
                     HomePage a = new HomePage();
                     a.Show();
                     this.Close();
                 }
-                
+                else if (count == 2 && (CBRoles.SelectedItem as Roles).Name == "Employee")
+                {
+                    Employee a = new Employee();
+                    a.Show();
+
+                }
+                else if (count == 3 && (CBRoles.SelectedItem as Roles).Name == "Accountant")
+                {
+
+                }
+                else
+                {
+                    MessageBox.Show("Wrong username or password");
+                }
             }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            //if (!string.IsNullOrEmpty(txtUsername.Text) && !string.IsNullOrEmpty(txtPassword.Password))
+            //{
+            //    if((CBRoles.SelectedItem as Roles).Name ==  "ADMIN")
+            //    {
+            //        HomePage a = new HomePage();
+            //        a.Show();
+            //        this.Close();
+            //    }
+                
+            //}
         }
 
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)

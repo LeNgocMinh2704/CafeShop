@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\Oop\Project\CafeShop\Cafe\App.xaml
-31201944279
+52063984839
 
-7-1593462653
+9-632234721
 16-1822430135
-Form\Selling.xaml;HomePage.xaml;Login.xaml;
+Form\Selling.xaml;HomePage.xaml;Login.xaml;ViewModel\Accountant.xaml;ViewModel\Employee.xaml;
 
 False
 
