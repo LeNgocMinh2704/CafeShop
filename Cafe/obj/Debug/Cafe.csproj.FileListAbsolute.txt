@@ -62,3 +62,4 @@ D:\Oop\Project\CafeShop\Cafe\obj\Debug\ViewModel\Accountant.g.cs
 D:\Oop\Project\CafeShop\Cafe\obj\Debug\ViewModel\Employee.g.cs
 D:\Oop\Project\CafeShop\Cafe\obj\Debug\ViewModel\Accountant.baml
 D:\Oop\Project\CafeShop\Cafe\obj\Debug\ViewModel\Employee.baml
+D:\Oop\Project\CafeShop\Cafe\obj\Debug\GeneratedInternalTypeHelper.g.cs

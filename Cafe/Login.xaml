@@ -4,6 +4,14 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Cafe"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+     TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+     TextElement.FontWeight="Regular"
+     TextElement.FontSize="13"
+     TextOptions.TextFormattingMode="Ideal"
+     TextOptions.TextRenderingMode="Auto"
+     Background="{DynamicResource MaterialDesignPaper}"
+     FontFamily="{DynamicResource MaterialDesignFont}"
         mc:Ignorable="d"
         Title="MainWindow" Height="500" Width="800"
         WindowStartupLocation="CenterScreen"
@@ -98,7 +106,15 @@
                         </Grid>
 
                     </Border>
-                    <ComboBox x:Name="CBRoles" Width="345" >
+                    <ComboBox x:Name="CBRoles"
+
+  materialDesign:HintAssist.Hint="Please select roles" Margin="5" Width="335" >
+                        <ComboBoxItem
+    Content="ADMIN" />
+                        <ComboBoxItem
+    Content="Employee" />
+                        <ComboBoxItem
+    Content="Accounatant" />
                         
                     </ComboBox>
 
