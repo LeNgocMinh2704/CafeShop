@@ -78,6 +78,7 @@ namespace Cafe
         private void ButtonEmployee_Click(object sender, RoutedEventArgs e)
         {
             Button_Choose(sender);
+            OpenChildForm(new Employee());
         }
 
         private void ButtonReport_Click(object sender, RoutedEventArgs e)

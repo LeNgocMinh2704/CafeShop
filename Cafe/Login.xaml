@@ -32,7 +32,9 @@
             <Border>
                 <Border.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                        <GradientStop Color="#3AA9AD" Offset="0"/>
+                        <!--<GradientStop Color="#3AA9AD" Offset="0"/>
+                        <GradientStop Color="#3AADA1" Offset="1"/>-->
+                        <GradientStop Color="Purple" Offset="0"/>
                         <GradientStop Color="#3AADA1" Offset="1"/>
 
                     </LinearGradientBrush>
@@ -40,7 +42,7 @@
 
                 <Grid>
                     <Canvas>
-                        <Polygon Points="0,20 230,149 0,270" Fill="#4EB1B6"/>
+                        <Polygon Points="0,20 230,149 0,270" Fill="#4EB1B6" Opacity="0.7"/>
                         <Polygon Points="100,400 200, 370 180, 470" Fill="#4EB1B6"/>
                         <Ellipse Margin="250 450 0 0" Width="40" Height="40" Fill="#4EB1B6"/>
                         <Ellipse Margin="50 400 0 0" Width="20" Height="20" Fill="#4EB1B6"/>
@@ -114,13 +116,8 @@
                     </Border>
                     <ComboBox x:Name="CBRoles"
 
-  materialDesign:HintAssist.Hint="Please select roles" Margin="10" Width="335" >
-                        <ComboBoxItem
-    Content="ADMIN" />
-                        <ComboBoxItem
-    Content="Employee" />
-                        <ComboBoxItem
-    Content="Accounatant" />
+  materialDesign:HintAssist.Hint="Please select roles" Margin="10" Width="335">
+                        
                         
                     </ComboBox>
 

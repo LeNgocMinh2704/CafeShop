@@ -31,14 +31,14 @@ namespace Cafe
         }
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            //RolesName = new List<Roles>() {
-            //    new Roles(){Name = "ADMIN"},
-            //    new Roles(){Name = "Employee"},
-            //    new Roles(){Name = "Accountant"},
-            //};
-            //CBRoles.ItemsSource = RolesName;
-            //CBRoles.DisplayMemberPath = "Name";
-            
+            RolesName = new List<Roles>() {
+                new Roles(){Name = "ADMIN"},
+                new Roles(){Name = "Employee"},
+                new Roles(){Name = "Accountant"},
+            };
+            CBRoles.ItemsSource = RolesName;
+            CBRoles.DisplayMemberPath = "Name";
+
         }
         public class Roles
         {
@@ -80,22 +80,22 @@ namespace Cafe
                 cmd.Parameters.AddWithValue("@username", txtUsername.Text);
                 cmd.Parameters.AddWithValue("@password", txtPassword.Password);
                 int count = Convert.ToInt32(cmd.ExecuteScalar());
-                if(count == 1 && CBRoles.SelectedItem.ToString() == "ADMIN")
+                if(count == 1 && (CBRoles.SelectedItem as Roles).Name == "ADMIN")
                 {
                     HomePage a = new HomePage();
                     a.Show();
                     this.Close();
                 }
-                //else if (count == 2 && (CBRoles.SelectedItem as Roles).Name == "Employee")
-                //{
-                //    Employee a = new Employee();
-                //    a.Show();
+                else if (count == 2 && (CBRoles.SelectedItem as Roles).Name == "Employee")
+                {
+                    Employee a = new Employee();
+                    a.Show();
 
-                //}
-                //else if (count == 3 && (CBRoles.SelectedItem as Roles).Name == "Accountant")
-                //{
+                }
+                else if (count == 3 && (CBRoles.SelectedItem as Roles).Name == "Accountant")
+                {
 
-                //}
+                }
                 else
                 {
                     MessageBox.Show("Wrong username or password");
