@@ -46,33 +46,19 @@ namespace Cafe
         }
         private void txtUername_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if(!string.IsNullOrEmpty(txtUsername.Text) && txtUsername.Text.Length > 0)
-            {
-                textUsername.Visibility = Visibility.Collapsed;
-            }
-            else
-            {
-                textUsername.Visibility = Visibility.Visible;
-            }
+           
         }
 
        
         private void txtPassword_PasswordChanged(object sender, RoutedEventArgs e)
         {
-            if(!string.IsNullOrEmpty(txtPassword.Password) && txtPassword.Password.Length > 0)
-            {
-                textPassword.Visibility = Visibility.Collapsed;
-            }
-            else
-            {
-                textPassword.Visibility = Visibility.Visible;
-            }
+            
         }
 
-        private void textPassword_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            txtPassword.Focus();
-        }
+        //private void textPassword_MouseDown(object sender, MouseButtonEventArgs e)
+        //{
+        //    txtPassword.Focus();
+        //}
 
         private void textUsername_MouseDown(object sender, MouseButtonEventArgs e)
         {
